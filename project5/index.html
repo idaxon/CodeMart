@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Monetization Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
+
+</head>
+<body>
+
+    <!-- Sticky Navbar -->
+    <nav class="navbar">
+        <div class="logo">CodeMart</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#aboutus">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#cart">Cart (<span id="cart-count">0</span>)</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section (Full-screen Hero Section) -->
+    <section id="home" class="hero" data-aos="fade">
+        <div class="hero-content">
+            <h1>Welcome to Code Monetization Hub</h1>
+            <p>Buy, Sell, and Discover Reusable Code Snippets, Templates, and Mini-Apps</p>
+            <button onclick="scrollToProducts()">Browse Products</button>
+        </div>
+    </section>
+
+   <!-- Product Listings -->
+<section class="product-listing">
+    <h2>Available Projects</h2>
+    <div class="products">
+        
+        
+            <!-- Carousel Wrapper -->
+            <div class="carousel-container">
+                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                <div class="carousel">
+                    <!-- Project 1 -->
+                    <div class="product-card" data-aos="fade-up">
+                        <img src="data:image/jpeg;base64,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" alt="Project 1 Image">
+                        <h3>Project One</h3>
+                        <p>This is a brief description of Project One. A mini-app built with React.js and Node.js.</p>
+                        <p><strong>Made by:</strong> John Doe</p>
+                        <p><strong>Uploaded on:</strong> January 10, 2025</p>
+                        <p><strong>Price:</strong> ₹1500</p>
+                        <button onclick="addToCart('Project One', 1500)">Add to Cart</button>
+                    </div>
+                    <!-- Project 2 -->
+                    <div class="product-card" data-aos="fade-up">
+                        <img src="https://flatlogic.com/blog/wp-content/uploads/2020/06/habitica-min-1024x555.png" alt="Project 2 Image">
+                        <h3>Project Two</h3>
+                        <p>This is a brief description of Project Two. A mobile app built with Flutter and Firebase.</p>
+                        <p><strong>Made by:</strong> Jane Smith</p>
+                        <p><strong>Uploaded on:</strong> December 15, 2024</p>
+                        <p><strong>Price:</strong> ₹2500</p>
+                        <button onclick="addToCart('Project Two', 2500)">Add to Cart</button>
+                    </div>
+                    <!-- Project 3 -->
+                    <div class="product-card" data-aos="fade-up">
+                        <img src="https://colorlib.com/wp/wp-content/uploads/sites/2/free-react-dashboard-templates.jpg" alt="Project 3 Image">
+                        <h3>Project Three</h3>
+                        <p>This is a brief description of Project Three. A website template made with HTML, CSS, and JavaScript.</p>
+                        <p><strong>Made by:</strong> Alice Johnson</p>
+                        <p><strong>Uploaded on:</strong> January 5, 2025</p>
+                        <p><strong>Price:</strong> ₹1000</p>
+                        <button onclick="addToCart('Project Three', 1000)">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-aos="fade-up">
+                        <img src="https://store-wp.mui.com/wp-content/uploads/2023/04/CoreUI-Free-React.js-Admin-Template-1-936x550.png" alt="Project 2 Image">
+                        <h3>Project Two</h3>
+                        <p>This is a brief description of Project Two. A mobile app built with Flutter and Firebase.</p>
+                        <p><strong>Made by:</strong> Jane Smith</p>
+                        <p><strong>Uploaded on:</strong> December 15, 2024</p>
+                        <p><strong>Price:</strong> ₹2500</p>
+                        <button onclick="addToCart('Project Two', 2500)">Add to Cart</button>
+                    </div>
+                </div>
+                <button class="next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+        </section>
+        
+        <!-- Cart and Checkout Section -->
+        <section class="cart-checkout">
+            <h2>Cart & Checkout</h2>
+            <div class="cart">
+                <h3>Your Cart</h3>
+                <ul id="cart-items"></ul>
+                <p><strong>Total:</strong> ₹<span id="cart-total">0</span></p>
+            </div>
+            <div class="checkout">
+                <h3>Checkout</h3>
+                <p>Please confirm your items and proceed to checkout:</p>
+                <button onclick="checkout()">Checkout</button>
+            </div>
+        </section>
+        
+    </div>
+</section>
+
+
+    <!-- Add Your Project -->
+    <section id="add-project" class="add-project" data-aos="fade-up">
+        <h2><i class="fas fa-plus-circle"></i> Add Your Project</h2>
+      <h1> <p>Share your reusable code snippets, templates, and mini-apps with the world!</p></h1><br>
+        <form id="add-project-form">
+            <div class="input-group">
+                <i class="fas fa-project-diagram"></i>
+                <input type="text" id="project-name" placeholder="Project Name" required />
+            </div>
+            <div class="input-group">
+                <i class="fas fa-file-alt"></i>
+                <textarea id="project-description" placeholder="Project Description" required></textarea>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-cogs"></i>
+                <input type="text" id="project-framework" placeholder="Framework" required />
+            </div>
+            <div class="input-group">
+                <i class="fas fa-dollar-sign"></i>
+                <input type="number" id="project-price" placeholder="Price" required />
+            </div>
+            <button type="submit" class="submit-btn"><i class="fas fa-upload"></i> Submit Project</button>
+        </form>
+    </section>
+
+    <div class="aboutus" data-aos="fade-up" data-aos-duration="1500">
+        <h1>About CodeMart</h1>
+        <p>Welcome to <span class="savage">CodeMart</span>—the ultimate marketplace for developers. Buy, sell, and explore code, frameworks, and projects in every language imaginable. It’s where coders connect, collaborate, and level up.</p>
+        <p>Need a killer framework? Grab it. Got a killer project? Sell it. CodeMart is your go-to for all things tech, built by coders, for coders.</p>
+        <p>Join the community, get inspired, and let’s build something epic!</p>
+        
+    </div>
+    <div  data-aos="fade-down" data-aos-duration="1500">
+       
+    </div>
+
+
+
+
+    <!-- Contact Section -->
+<section id="contact" class="contact">
+    <h2>Talk to Us (Or Don’t, Your Call)</h2>
+    <p>Got something to share? Questions, complaints, or just want to flex your coding skills? Shoot your shot. 📨</p>
+    <form id="contact-form">
+        <div class="form-group">
+            <label for="contact-name">Your *Highly* Important Name</label>
+            <input 
+                type="text" 
+                id="contact-name" 
+                placeholder="E.g., Coding God, Beyoncé" 
+                required 
+            />
+        </div>
+        <div class="form-group">
+            <label for="contact-email">Your Fancy Email Address</label>
+            <input 
+                type="email" 
+                id="contact-email" 
+                placeholder="E.g., coolcoder@brilliantideas.com" 
+                required 
+            />
+        </div>
+        <div class="form-group">
+            <label for="contact-message">What’s the Tea?</label>
+            <textarea 
+                id="contact-message" 
+                placeholder="Spill it here... Make it spicy 🔥" 
+                required
+            ></textarea>
+        </div>
+        <button type="submit">
+            <i class="fas fa-paper-plane"></i> Send It Like You Mean It
+        </button>
+    </form>
+    <p class="note">* Serious inquiries only. Just kidding, send memes too. We’re cool like that.</p>
+</section>
+
+
+<footer style="background-color: #333; color: #fff; padding: 40px 20px; text-align: center;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <p>&copy; 2025 CodeHub | All Rights Reserved</p>
+        
+        <!-- Contact Info -->
+        <p>
+            <a href="mailto:contact@codemart.com" style="color: #fff; text-decoration: none; margin-right: 20px;">contact@codemart.com</a>
+            | <a href="tel:+1234567890" style="color: #fff; text-decoration: none; margin-right: 20px;">+123 456 7890</a>
+        </p>
+        
+        <!-- Useful Links -->
+        <p>
+            <a href="https://www.codemart.com" style="color: #fff; text-decoration: none; margin-right: 20px;">Visit Us</a>
+            | <a href="https://www.codemart.com/privacy-policy" style="color: #fff; text-decoration: none; margin-right: 20px;">Privacy Policy</a>
+            | <a href="https://www.codemart.com/terms" style="color: #fff; text-decoration: none;">Terms & Conditions</a>
+        </p>
+        
+        <!-- Address -->
+        <p>Address: 1234 Developer Street, CodeCity, TechState, 56789</p>
+        
+        <!-- Social Media & Logos -->
+        <p>Follow us on:</p>
+        <a href="https://www.facebook.com/codemart" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" style="width: 30px; margin-left: 10px;">
+        </a>
+       
+       
+        <a href="https://github.com/codemart" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" style="width: 30px; margin-left: 10px;">
+        </a>
+        <a href="https://www.instagram.com/codemart" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width: 30px; margin-left: 10px;">
+        </a>
+        <a href="https://www.youtube.com/c/codemart" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube" style="width: 30px; margin-left: 10px;">
+        </a>
+       
+        
+    </div>
+</footer>
+
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>
